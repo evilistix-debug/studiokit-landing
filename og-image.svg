@@ -1,0 +1,66 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow1" cx="75%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="#e8a830" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0f0e0c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="15%" cy="85%" r="40%">
+      <stop offset="0%" stop-color="#e8a830" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#0f0e0c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0f0e0c"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- Subtle border -->
+  <rect x="1" y="1" width="1198" height="628" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+
+  <!-- Amber top accent line -->
+  <rect x="80" y="80" width="60" height="3" fill="#e8a830" rx="1.5"/>
+
+  <!-- Logo wordmark -->
+  <text x="80" y="160" font-family="Georgia, serif" font-size="72" font-weight="700" fill="#f0e8d8" letter-spacing="-2">Studio</text>
+  <text x="380" y="160" font-family="Georgia, serif" font-size="72" font-weight="700" fill="#e8a830" letter-spacing="-2">Kit</text>
+
+  <!-- Tagline -->
+  <text x="80" y="220" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="26" font-weight="300" fill="#c8bfad" letter-spacing="0.3">Dance &amp; Activity School Management Software</text>
+
+  <!-- Divider -->
+  <rect x="80" y="260" width="1040" height="1" fill="rgba(255,255,255,0.06)"/>
+
+  <!-- Feature pills -->
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="400">
+    <!-- Pill 1 -->
+    <rect x="80" y="295" width="198" height="44" rx="22" fill="rgba(232,168,48,0.1)" stroke="rgba(232,168,48,0.25)" stroke-width="1"/>
+    <text x="179" y="323" fill="#e8a830" text-anchor="middle">Student management</text>
+
+    <!-- Pill 2 -->
+    <rect x="294" y="295" width="158" height="44" rx="22" fill="rgba(232,168,48,0.1)" stroke="rgba(232,168,48,0.25)" stroke-width="1"/>
+    <text x="373" y="323" fill="#e8a830" text-anchor="middle">Invoicing</text>
+
+    <!-- Pill 3 -->
+    <rect x="468" y="295" width="158" height="44" rx="22" fill="rgba(232,168,48,0.1)" stroke="rgba(232,168,48,0.25)" stroke-width="1"/>
+    <text x="547" y="323" fill="#e8a830" text-anchor="middle">Timetables</text>
+
+    <!-- Pill 4 -->
+    <rect x="642" y="295" width="200" height="44" rx="22" fill="rgba(232,168,48,0.1)" stroke="rgba(232,168,48,0.25)" stroke-width="1"/>
+    <text x="742" y="323" fill="#e8a830" text-anchor="middle">Competitions</text>
+
+    <!-- Pill 5 -->
+    <rect x="858" y="295" width="178" height="44" rx="22" fill="rgba(232,168,48,0.1)" stroke="rgba(232,168,48,0.25)" stroke-width="1"/>
+    <text x="947" y="323" fill="#e8a830" text-anchor="middle">Parent portal</text>
+  </g>
+
+  <!-- Main headline -->
+  <text x="80" y="430" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#f0e8d8" letter-spacing="-1">Run your school,</text>
+  <text x="80" y="500" font-family="Georgia, serif" font-size="56" font-weight="700" fill="#f0e8d8" letter-spacing="-1">not your <tspan font-style="italic" fill="#e8a830">spreadsheets.</tspan></text>
+
+  <!-- UK badge bottom right -->
+  <text x="1120" y="560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="16" fill="#6b6660" text-anchor="end">Built for independent UK activity schools</text>
+
+  <!-- Domain -->
+  <text x="80" y="560" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" fill="#6b6660">studiokit.uk</text>
+</svg>

@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary SEO -->
+<title>StudioKit — Dance &amp; Activity School Management Software UK</title>
+<meta name="description" content="StudioKit helps independent UK dance, music, martial arts and gymnastics schools manage students, invoices, timetables and competitions. Free for a full term — no card needed.">
+<meta name="keywords" content="dance school management software UK, activity school admin software, dance class booking software, martial arts school software, gymnastics school management, UK dance school app">
+<link rel="canonical" href="https://studiokit.uk">
+
+<!-- Open Graph -->
+<meta property="og:title" content="StudioKit — Dance &amp; Activity School Management Software">
+<meta property="og:description" content="Purpose-built for independent UK activity schools. Manage students, invoices, timetables and competitions — free for a full term, no card needed.">
+<meta property="og:url" content="https://studiokit.uk">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://studiokit.uk/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="StudioKit">
+<meta property="og:locale" content="en_GB">
+
+<!-- Twitter card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="StudioKit — Dance &amp; Activity School Management Software">
+<meta name="twitter:description" content="Purpose-built for independent UK activity schools. Free for a full term — no card needed.">
+<meta name="twitter:image" content="https://studiokit.uk/og-image.png">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "StudioKit",
+  "url": "https://studiokit.uk",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web, iOS, Android",
+  "description": "Studio management software for independent UK dance, music, martial arts and gymnastics schools. Manage students, invoices, timetables, competitions and parent communications.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "GBP",
+    "description": "Free for first full term, then from £19/month"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "StudioKit",
+    "url": "https://studiokit.uk",
+    "email": "hello@studiokit.uk",
+    "areaServed": "GB"
+  },
+  "featureList": [
+    "Student management",
+    "Invoice generation",
+    "Parent portal",
+    "Timetable builder",
+    "Competition and festival tracking",
+    "Push notifications",
+    "Analytics dashboard",
+    "Sage and Xero CSV export"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0f0e0c;
+  --bg2:       #161410;
+  --bg3:       #1e1b17;
+  --amber:     #e8a830;
+  --amber2:    #f5c560;
+  --amber-bg:  rgba(232,168,48,0.08);
+  --amber-bdr: rgba(232,168,48,0.25);
+  --cream:     #f0e8d8;
+  --cream2:    #c8bfad;
+  --muted:     #6b6660;
+  --border:    rgba(255,255,255,0.06);
+  --border2:   rgba(255,255,255,0.12);
+  --green:     #2e7d5a;
+  --green-bg:  rgba(46,125,90,0.15);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 5vw;
+  background: linear-gradient(to bottom, rgba(15,14,12,0.95) 60%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.nav-logo {
+  font-family: 'DM Sans', sans-serif; font-size: 1.15rem;
+  font-weight: 500; letter-spacing: -0.02em; color: var(--cream);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--amber); }
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  font-size: 0.85rem; color: var(--muted); text-decoration: none;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--cream2); }
+.nav-cta {
+  background: var(--amber); color: var(--bg); border: none;
+  padding: 9px 22px; border-radius: 100px;
+  font-family: 'DM Sans', sans-serif; font-size: 0.875rem;
+  font-weight: 500; cursor: pointer; text-decoration: none;
+  transition: background 0.15s;
+}
+.nav-cta:hover { background: var(--amber2); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 130px 5vw 90px;
+  position: relative; overflow: hidden;
+}
+.hero-glow {
+  position: absolute; top: -10%; right: -5%; width: 55vw; height: 55vw;
+  background: radial-gradient(ellipse, rgba(232,168,48,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-glow2 {
+  position: absolute; bottom: 0; left: -10%; width: 40vw; height: 40vw;
+  background: radial-gradient(ellipse, rgba(232,168,48,0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--amber);
+  margin-bottom: 24px;
+  opacity: 0; animation: fadeUp 0.7s 0.1s forwards;
+}
+.hero-eyebrow-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--amber); flex-shrink: 0;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem, 6.5vw, 5rem);
+  font-weight: 700; line-height: 1.08; letter-spacing: -0.02em;
+  color: var(--cream); max-width: 760px;
+  opacity: 0; animation: fadeUp 0.7s 0.22s forwards;
+}
+.hero h1 em { font-style: italic; color: var(--amber); }
+.hero-sub {
+  font-size: clamp(1rem, 1.8vw, 1.15rem); font-weight: 300;
+  color: var(--cream2); max-width: 520px;
+  margin-top: 28px; line-height: 1.7;
+  opacity: 0; animation: fadeUp 0.7s 0.36s forwards;
+}
+.hero-actions {
+  display: flex; gap: 12px; margin-top: 44px; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.7s 0.48s forwards;
+}
+.btn-primary {
+  background: var(--amber); color: var(--bg);
+  padding: 15px 30px; border-radius: 100px;
+  font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 500;
+  text-decoration: none; transition: background 0.15s; white-space: nowrap;
+}
+.btn-primary:hover { background: var(--amber2); }
+.btn-ghost {
+  background: transparent; color: var(--cream2);
+  padding: 15px 30px; border-radius: 100px;
+  font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 400;
+  text-decoration: none; border: 1px solid var(--border2);
+  transition: border-color 0.15s, color 0.15s; white-space: nowrap;
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,0.3); color: var(--cream); }
+.hero-note {
+  font-size: 0.78rem; color: var(--muted); margin-top: 18px;
+  opacity: 0; animation: fadeUp 0.7s 0.58s forwards;
+}
+.hero-pills {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px;
+  opacity: 0; animation: fadeUp 0.7s 0.68s forwards;
+}
+.hero-pill {
+  font-size: 0.75rem; padding: 5px 13px; border-radius: 100px;
+  border: 1px solid var(--border); color: var(--muted);
+}
+
+/* SCROLLING STRIP */
+.strip {
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 16px 0; overflow: hidden; background: var(--bg2);
+}
+.strip-track {
+  display: flex; white-space: nowrap;
+  animation: ticker 32s linear infinite;
+  width: max-content;
+}
+.strip-item {
+  font-size: 0.75rem; color: var(--muted); letter-spacing: 0.05em;
+  display: inline-flex; align-items: center;
+  padding: 0 28px;
+}
+.strip-item::after {
+  content: '✦'; color: var(--amber); font-size: 0.5rem;
+  margin-left: 28px;
+}
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* SECTION BASE */
+.section { padding: 100px 5vw; }
+.section-label {
+  font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--amber); margin-bottom: 14px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700;
+  line-height: 1.18; color: var(--cream); max-width: 580px; margin-bottom: 16px;
+}
+.section-sub {
+  font-size: 1rem; color: var(--cream2); font-weight: 300;
+  line-height: 1.7; max-width: 500px; margin-bottom: 52px;
+}
+
+/* FEATURES GRID */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+}
+.feature-card {
+  background: var(--bg2); padding: 30px 26px;
+  transition: background 0.2s;
+}
+.feature-card:hover { background: var(--bg3); }
+.feature-icon { font-size: 1.5rem; margin-bottom: 14px; }
+.feature-title { font-size: 0.95rem; font-weight: 500; color: var(--cream); margin-bottom: 8px; }
+.feature-desc { font-size: 0.84rem; color: var(--cream2); font-weight: 300; line-height: 1.65; }
+
+/* PHONE MOCK */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.phone-mock {
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: 30px; padding: 22px 18px; max-width: 300px;
+  margin: 0 auto; position: relative;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04);
+}
+.phone-notch {
+  width: 38px; height: 4px; background: var(--bg3); border-radius: 2px;
+  margin: 0 auto 16px;
+}
+.mock-header {
+  background: var(--bg); border-radius: 10px; padding: 10px 12px;
+  margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between;
+}
+.mock-logo { font-size: 0.75rem; font-weight: 500; color: var(--cream); }
+.mock-logo span { color: var(--amber); }
+.mock-tabs {
+  display: flex; gap: 3px; margin-bottom: 14px;
+  background: var(--bg); border-radius: 8px; padding: 3px;
+}
+.mock-tab {
+  flex: 1; text-align: center; font-size: 0.58rem; padding: 5px 2px;
+  color: var(--muted); border-radius: 5px;
+}
+.mock-tab.active { background: var(--amber-bg); color: var(--amber); }
+.mock-card {
+  background: var(--bg); border-radius: 9px; padding: 11px 12px; margin-bottom: 7px;
+}
+.mock-card-title { font-size: 0.7rem; font-weight: 500; color: var(--cream); margin-bottom: 2px; }
+.mock-card-sub { font-size: 0.6rem; color: var(--muted); }
+.mock-badge {
+  display: inline-block; font-size: 0.56rem; padding: 2px 7px;
+  border-radius: 4px; margin-top: 5px; font-weight: 500;
+}
+.mock-badge.paid { background: var(--green-bg); color: #7dcca8; }
+.mock-badge.due { background: var(--amber-bg); color: var(--amber); }
+
+/* HOW IT WORKS */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+.step-number {
+  font-family: 'DM Sans', sans-serif; font-size: 1.1rem; font-weight: 500; color: var(--amber);
+  border: 1px solid var(--amber-bdr); border-radius: 10px;
+  width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px; background: var(--amber-bg);
+}
+.step-title { font-size: 1rem; font-weight: 500; color: var(--cream); margin-bottom: 8px; }
+.step-desc { font-size: 0.875rem; color: var(--cream2); font-weight: 300; line-height: 1.65; }
+
+/* DIFFERENTIATORS */
+.diff-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+.diff-item { text-align: center; }
+.diff-icon { font-size: 1.8rem; margin-bottom: 12px; }
+.diff-title { font-size: 0.875rem; font-weight: 500; color: var(--cream); margin-bottom: 6px; }
+.diff-desc { font-size: 0.8rem; color: var(--muted); font-weight: 300; line-height: 1.6; }
+
+/* QUOTE */
+.quote-section {
+  padding: 80px 5vw; text-align: center;
+  background: linear-gradient(160deg, rgba(232,168,48,0.05) 0%, transparent 50%);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.quote-marks {
+  font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--amber);
+  line-height: 0.5; margin-bottom: 24px; opacity: 0.35;
+}
+blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 2.8vw, 1.9rem);
+  font-style: italic; color: var(--cream); max-width: 700px;
+  margin: 0 auto 20px; line-height: 1.5;
+}
+.quote-attr { font-size: 0.82rem; color: var(--muted); }
+.quote-attr strong { color: var(--cream2); font-weight: 400; }
+
+/* PRICING */
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.pricing-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 18px; padding: 32px 28px; position: relative;
+  transition: border-color 0.2s;
+}
+.pricing-card:hover { border-color: var(--border2); }
+.pricing-card.featured {
+  border-color: var(--amber-bdr);
+  background: linear-gradient(160deg, rgba(232,168,48,0.06) 0%, var(--bg2) 60%);
+}
+.pricing-popular {
+  position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+  background: var(--amber); color: var(--bg); font-size: 0.65rem; font-weight: 500;
+  padding: 3px 14px; border-radius: 100px; white-space: nowrap; letter-spacing: 0.04em;
+}
+.pricing-name {
+  font-size: 0.75rem; color: var(--muted); text-transform: uppercase;
+  letter-spacing: 0.12em; margin-bottom: 14px; font-weight: 500;
+}
+.pricing-price {
+  font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 700;
+  color: var(--cream); line-height: 1; margin-bottom: 4px;
+}
+.pricing-price sup {
+  font-size: 1.2rem; vertical-align: super; font-family: 'DM Sans', sans-serif;
+  font-weight: 400; margin-right: 2px;
+}
+.pricing-price sub {
+  font-size: 0.9rem; vertical-align: baseline; font-family: 'DM Sans', sans-serif;
+  font-weight: 300; color: var(--muted);
+}
+.pricing-desc { font-size: 0.78rem; color: var(--muted); margin-bottom: 16px; }
+.pricing-saving {
+  font-size: 0.72rem; color: var(--green); margin-bottom: 16px;
+  background: var(--green-bg); padding: 4px 10px; border-radius: 6px;
+  display: inline-block;
+}
+.pricing-divider { height: 1px; background: var(--border); margin-bottom: 20px; }
+.pricing-list { list-style: none; margin-bottom: 28px; }
+.pricing-list li {
+  font-size: 0.85rem; color: var(--cream2); font-weight: 300;
+  padding: 6px 0; display: flex; align-items: flex-start; gap: 9px; line-height: 1.4;
+}
+.pricing-list li::before {
+  content: '✓'; color: var(--amber); font-size: 0.72rem;
+  flex-shrink: 0; margin-top: 2px; font-weight: 500;
+}
+.pricing-cta {
+  display: block; text-align: center;
+  padding: 13px; border-radius: 100px;
+  font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500;
+  text-decoration: none; transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.pricing-cta.filled { background: var(--amber); color: var(--bg); }
+.pricing-cta.filled:hover { background: var(--amber2); }
+.pricing-cta.outlined { border: 1px solid var(--border2); color: var(--cream2); }
+.pricing-cta.outlined:hover { border-color: rgba(255,255,255,0.3); color: var(--cream); }
+
+/* FINAL CTA */
+.cta-section { text-align: center; padding: 90px 5vw 110px; }
+.cta-section .section-title { margin: 0 auto 16px; text-align: center; max-width: 520px; }
+
+/* FOOTER */
+footer { padding: 44px 5vw; border-top: 1px solid var(--border); }
+.footer-top {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  flex-wrap: wrap; gap: 32px; margin-bottom: 32px;
+}
+.footer-logo { font-size: 1rem; font-weight: 500; color: var(--cream); }
+.footer-logo span { color: var(--amber); }
+.footer-tagline { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
+.footer-links a {
+  font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color 0.15s;
+}
+.footer-links a:hover { color: var(--cream2); }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 8px; padding-top: 24px; border-top: 1px solid var(--border);
+}
+.footer-copy { font-size: 0.72rem; color: var(--muted); }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0; transform: translateY(22px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  .diff-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 680px) {
+  .split { grid-template-columns: 1fr; gap: 40px; }
+  .phone-mock { max-width: 100%; }
+  .features-grid { grid-template-columns: 1fr; }
+  .diff-grid { grid-template-columns: 1fr 1fr; }
+  nav { padding: 14px 5vw; }
+  .nav-links { display: none; }
+  .hero { padding: 100px 5vw 60px; }
+  .section { padding: 70px 5vw; }
+  footer { padding: 36px 5vw; }
+  .footer-top { flex-direction: column; gap: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Studio<span>Kit</span></a>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="mailto:hello@studiokit.uk">Contact</a>
+    <a href="https://app.studiokit.uk" style="color:var(--cream2)">Teacher login</a>
+    <a href="https://app.studiokit.uk/portal.html" style="color:var(--cream2)">Parent portal</a>
+  </div>
+  <a href="https://app.studiokit.uk" class="nav-cta">Get started free</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-eyebrow">
+    <span class="hero-eyebrow-dot"></span>
+    Studio management for independent UK activity schools
+  </div>
+  <h1>Run your school,<br>not your <em>spreadsheets.</em></h1>
+  <p class="hero-sub">Students, invoices, timetables, festivals and a parent portal — all in one place. Built for teachers who'd rather teach than do admin.</p>
+  <div class="hero-actions">
+    <a href="https://app.studiokit.uk" class="btn-primary">Start free &rarr;</a>
+    <a href="#features" class="btn-ghost">See what's included</a>
+  </div>
+  <p class="hero-note">Free for a full term &nbsp;&middot;&nbsp; No credit card needed &nbsp;&middot;&nbsp; Cancel anytime</p>
+  <div class="hero-pills">
+    <span class="hero-pill">&#128131; Dance</span>
+    <span class="hero-pill">&#127925; Music</span>
+    <span class="hero-pill">&#129355; Martial arts</span>
+    <span class="hero-pill">&#9917; Sports clubs</span>
+    <span class="hero-pill">&#129336; Gymnastics</span>
+    <span class="hero-pill">&#127917; Drama</span>
+    <span class="hero-pill">+ more</span>
+  </div>
+</section>
+
+<!-- SCROLLING STRIP -->
+<div class="strip">
+  <div class="strip-track">
+    <span class="strip-item">Student management</span>
+    <span class="strip-item">Invoice generation</span>
+    <span class="strip-item">Parent portal</span>
+    <span class="strip-item">Festival entries</span>
+    <span class="strip-item">Timetable builder</span>
+    <span class="strip-item">Competition results</span>
+    <span class="strip-item">Class recommendations</span>
+    <span class="strip-item">Payment tracking</span>
+    <span class="strip-item">Analytics dashboard</span>
+    <span class="strip-item">Sage &amp; Xero export</span>
+    <span class="strip-item">Push notifications</span>
+    <span class="strip-item">Billing automation</span>
+    <span class="strip-item">Student management</span>
+    <span class="strip-item">Invoice generation</span>
+    <span class="strip-item">Parent portal</span>
+    <span class="strip-item">Festival entries</span>
+    <span class="strip-item">Timetable builder</span>
+    <span class="strip-item">Competition results</span>
+    <span class="strip-item">Class recommendations</span>
+    <span class="strip-item">Payment tracking</span>
+    <span class="strip-item">Analytics dashboard</span>
+    <span class="strip-item">Sage &amp; Xero export</span>
+    <span class="strip-item">Push notifications</span>
+    <span class="strip-item">Billing automation</span>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="reveal">
+    <div class="section-label">Everything in one place</div>
+    <h2 class="section-title">Built for the way activity schools actually work</h2>
+    <p class="section-sub">Not generic business software. StudioKit is purpose-built for independent UK activity schools — from your first student to your hundredth.</p>
+  </div>
+  <div class="features-grid reveal">
+    <div class="feature-card">
+      <div class="feature-icon">&#128101;</div>
+      <div class="feature-title">Student management</div>
+      <div class="feature-desc">Add students, assign classes, set term rates and track returning vs new enrolments. Everything in one place per student.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#129534;</div>
+      <div class="feature-title">Smart invoicing</div>
+      <div class="feature-desc">Generate invoices by term in one tap. Multi-class discounts, week overrides, automatic payment reminders and one-click CSV export.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#128197;</div>
+      <div class="feature-title">Visual timetable</div>
+      <div class="feature-desc">Week and day views with studio columns, colour-coded by room. Clash detection built in. Tap any empty slot to add a class instantly.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#128106;</div>
+      <div class="feature-title">Parent portal</div>
+      <div class="feature-desc">Every parent gets their own portal to view invoices, pay, see the timetable, festival schedule and competition results. Installs as an app.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#127942;</div>
+      <div class="feature-title">Festivals &amp; competitions</div>
+      <div class="feature-desc">Track entries, import schedules by photo or PDF, record results and share medals with parents the moment they're entered.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#128202;</div>
+      <div class="feature-title">Analytics</div>
+      <div class="feature-desc">Revenue by term, class popularity, medal tallies, top performers. For teachers and parents — know your school at a glance.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#128179;</div>
+      <div class="feature-title">Payment tracking</div>
+      <div class="feature-desc">Parents confirm bank transfers in the portal. Teachers confirm receipt. Export to CSV for Sage, Xero or your accountant.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#11088;</div>
+      <div class="feature-title">Class recommendations</div>
+      <div class="feature-desc">Suggest new classes to parents with a personal message. Set follow-up reminders. Parents can request enrolment directly from their portal.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#128104;&#8205;&#127979;</div>
+      <div class="feature-title">Multi-teacher logins</div>
+      <div class="feature-desc">Invite teachers by email with module-level permissions. Non-owners only see what they need — settings and billing stay private.</div>
+    </div>
+    <div class="feature-card" style="grid-column: 1 / -1; display: flex; align-items: flex-start; gap: 24px;">
+      <div class="feature-icon" style="flex-shrink:0;margin-bottom:0;font-size:1.8rem">&#128276;</div>
+      <div>
+        <div class="feature-title">Push notifications</div>
+        <div class="feature-desc" style="max-width:600px">Notify parents the moment an event is created, cancelled, or a result is entered. Teachers get notified when a payment is confirmed or an enrolment is requested. Straight to their phone — no email needed.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding-top:80px;padding-bottom:80px">
+  <div class="reveal" style="margin-bottom:52px">
+    <div class="section-label">Getting started</div>
+    <h2 class="section-title">Up and running in under 10 minutes</h2>
+    <p class="section-sub">No implementation project. No onboarding call. Sign up, enter your details and start managing your school.</p>
+  </div>
+  <div class="steps reveal">
+    <div>
+      <div class="step-number">1</div>
+      <div class="step-title">Create your school</div>
+      <div class="step-desc">Sign up, add your school name and set up your terms and studios. Takes about two minutes — no credit card needed.</div>
+    </div>
+    <div>
+      <div class="step-number">2</div>
+      <div class="step-title">Add students &amp; classes</div>
+      <div class="step-desc">Add your students and your class timetable. Running a dance school? Load our template — 24 class types ready in one tap.</div>
+    </div>
+    <div>
+      <div class="step-number">3</div>
+      <div class="step-title">Send your first invoice</div>
+      <div class="step-desc">Generate invoices for the whole term in one click. Parents get a link to their portal where they can view, pay and track everything.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PARENT PORTAL SPLIT -->
+<section class="section">
+  <div class="split reveal">
+    <div>
+      <div class="section-label">Parent portal</div>
+      <h2 class="section-title">Parents stay informed — without the group chats</h2>
+      <p class="section-sub">Every parent gets their own portal. Invoices, the timetable, festival schedules and results — all in one place on their phone.</p>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:28px">
+        <li style="display:flex;gap:10px;font-size:0.9rem;color:var(--cream2);font-weight:300;align-items:flex-start"><span style="color:var(--amber);flex-shrink:0;margin-top:1px">&#10003;</span>View and pay invoices — confirm by bank transfer</li>
+        <li style="display:flex;gap:10px;font-size:0.9rem;color:var(--cream2);font-weight:300;align-items:flex-start"><span style="color:var(--amber);flex-shrink:0;margin-top:1px">&#10003;</span>See the school timetable and request to join new classes</li>
+        <li style="display:flex;gap:10px;font-size:0.9rem;color:var(--cream2);font-weight:300;align-items:flex-start"><span style="color:var(--amber);flex-shrink:0;margin-top:1px">&#10003;</span>Festival schedule with dates, times and entry numbers</li>
+        <li style="display:flex;gap:10px;font-size:0.9rem;color:var(--cream2);font-weight:300;align-items:flex-start"><span style="color:var(--amber);flex-shrink:0;margin-top:1px">&#10003;</span>Competition results as soon as they're entered</li>
+        <li style="display:flex;gap:10px;font-size:0.9rem;color:var(--cream2);font-weight:300;align-items:flex-start"><span style="color:var(--amber);flex-shrink:0;margin-top:1px">&#10003;</span>RSVP to school events — going, maybe, or can't make it</li>
+        <li style="display:flex;gap:10px;font-size:0.9rem;color:var(--cream2);font-weight:300;align-items:flex-start"><span style="color:var(--amber);flex-shrink:0;margin-top:1px">&#10003;</span>Installs as a home screen app on iOS and Android</li>
+      </ul>
+      <a href="https://app.studiokit.uk/portal.html" style="font-size:0.85rem;color:var(--amber);text-decoration:none">See the parent portal &rarr;</a>
+    </div>
+    <div class="phone-mock">
+      <div class="phone-notch"></div>
+      <div class="mock-header">
+        <span class="mock-logo">Studio<span>Kit</span></span>
+        <span style="font-size:0.6rem;color:var(--muted)">J.A.M Dance Academy</span>
+      </div>
+      <div class="mock-tabs">
+        <div class="mock-tab">&#127968;</div>
+        <div class="mock-tab active">&#129534;</div>
+        <div class="mock-tab">&#128197;</div>
+        <div class="mock-tab">&#128227;</div>
+        <div class="mock-tab">&#128202;</div>
+        <div class="mock-tab">&#127917;</div>
+      </div>
+      <div style="font-size:0.6rem;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.08em">Invoices</div>
+      <div class="mock-card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div>
+            <div class="mock-card-title">Autumn Term 2025</div>
+            <div class="mock-card-sub">Charlotte Davies</div>
+          </div>
+          <div style="font-size:0.9rem;font-weight:500;color:var(--cream)">£312</div>
+        </div>
+        <span class="mock-badge paid">Paid &#10003;</span>
+      </div>
+      <div class="mock-card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div>
+            <div class="mock-card-title">Spring Term 2026</div>
+            <div class="mock-card-sub">Charlotte Davies</div>
+          </div>
+          <div style="font-size:0.9rem;font-weight:500;color:var(--cream)">£336</div>
+        </div>
+        <span class="mock-badge due">Due 10 Jan</span>
+      </div>
+      <div class="mock-card" style="background:var(--amber-bg);border:1px solid var(--amber-bdr)">
+        <div style="font-size:0.65rem;font-weight:500;color:var(--amber);margin-bottom:4px">&#128161; Recommendation</div>
+        <div class="mock-card-title">Contemporary &mdash; Thursdays</div>
+        <div class="mock-card-sub">Miss Jo thinks Charlotte would love this class</div>
+        <div style="display:flex;gap:6px;margin-top:8px">
+          <div style="font-size:0.6rem;padding:3px 8px;border-radius:4px;background:var(--amber);color:var(--bg);font-weight:500">Request place</div>
+          <div style="font-size:0.6rem;padding:3px 8px;border-radius:4px;border:1px solid var(--border2);color:var(--muted)">Speak to Miss Jo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATORS -->
+<section class="section" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding-top:80px;padding-bottom:80px">
+  <div class="reveal" style="text-align:center;margin-bottom:52px">
+    <div class="section-label">Why StudioKit</div>
+    <h2 class="section-title" style="margin:0 auto;text-align:center;max-width:560px">The only platform built<br>for independent activity schools</h2>
+  </div>
+  <div class="diff-grid reveal">
+    <div class="diff-item">
+      <div class="diff-icon">&#127942;</div>
+      <div class="diff-title">Festival &amp; competition management</div>
+      <div class="diff-desc">The only platform with built-in entry tracking, results and instant parent sharing. No competitor offers this.</div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-icon">&#128183;</div>
+      <div class="diff-title">Half the price</div>
+      <div class="diff-desc">From £19/month with no per-student fees, no booking cuts, no hidden charges. Free for a full term to get started.</div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-icon">&#128242;</div>
+      <div class="diff-title">Parent portal included</div>
+      <div class="diff-desc">A full parent-facing app with invoices, timetable, results and push notifications — included at every price point.</div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-icon">&#127468;&#127463;</div>
+      <div class="diff-title">UK-first</div>
+      <div class="diff-desc">UK term structures, bank transfer invoicing, GBP, Sage/Xero export and GDPR compliance built in from day one.</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-section reveal">
+  <div class="quote-marks">&ldquo;</div>
+  <blockquote>I started teaching because I love dance, not admin. StudioKit gives me that back.</blockquote>
+  <div class="quote-attr"><strong>Miss Jo</strong> &nbsp;&middot;&nbsp; J.A.M Dance Academy, Worthing &nbsp;&middot;&nbsp; Founding school</div>
+</div>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="reveal">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Priced for independent schools, not chains</h2>
+    <p class="section-sub">Free for a full term — no credit card needed. After that, one flat monthly price with no per-student fees, no booking cuts, no surprises.</p>
+  </div>
+  <div class="pricing-grid reveal" style="grid-template-columns: repeat(2,1fr); max-width: 760px;">
+    <div class="pricing-card featured">
+      <div class="pricing-popular">Most popular</div>
+      <div class="pricing-name">Studio</div>
+      <div class="pricing-price"><sup>&pound;</sup>19<sub>/ month</sub></div>
+      <div class="pricing-desc">Unlimited students &nbsp;&middot;&nbsp; Cancel anytime</div>
+      <div class="pricing-saving">First full term free — no card needed</div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-list">
+        <li>Student &amp; class management</li>
+        <li>Invoice generation &amp; reminders</li>
+        <li>Parent portal</li>
+        <li>Visual timetable builder</li>
+        <li>Festival &amp; competition tracking</li>
+        <li>Analytics dashboard</li>
+        <li>Push notifications</li>
+        <li>CSV export for Sage &amp; Xero</li>
+        <li>Billing automation by term</li>
+        <li>Multi-teacher logins</li>
+      </ul>
+      <a href="https://app.studiokit.uk" class="pricing-cta filled">Start free — no card needed</a>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-name">Academy</div>
+      <div class="pricing-price"><sup>&pound;</sup>39<sub>/ month</sub></div>
+      <div class="pricing-desc">For larger or multi-location schools</div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-list">
+        <li>Everything in Studio</li>
+        <li>Multiple teaching locations</li>
+        <li>Custom branding</li>
+        <li>Dedicated onboarding</li>
+        <li>API access</li>
+        <li>Phone support</li>
+      </ul>
+      <a href="mailto:hello@studiokit.uk" class="pricing-cta outlined">Contact us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section reveal">
+  <h2 class="section-title">Free for a full term.<br>Yours to keep after that.</h2>
+  <p style="font-size:1rem;color:var(--cream2);font-weight:300;margin:0 auto 40px;max-width:420px;line-height:1.65">No credit card needed. Set up in minutes. If you're not completely sold after a full term, you never have to pay a penny.</p>
+  <a href="https://app.studiokit.uk" class="btn-primary" style="font-size:1rem;padding:16px 36px;display:inline-block">Start free &rarr;</a>
+  <p style="font-size:0.78rem;color:var(--muted);margin-top:16px">Questions? Email us at <a href="mailto:hello@studiokit.uk" style="color:var(--amber);text-decoration:none">hello@studiokit.uk</a></p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">Studio<span>Kit</span></div>
+      <div class="footer-tagline">Studio management for independent UK activity schools</div>
+    </div>
+    <div class="footer-links">
+      <a href="https://app.studiokit.uk">Teacher app</a>
+      <a href="https://app.studiokit.uk/portal.html">Parent portal</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="mailto:hello@studiokit.uk">Contact</a>
+      <a href="/privacy.html">Privacy policy</a>
+      <a href="/terms.html">Terms</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2026 StudioKit. Built for independent activity schools across the UK.</div>
+    <div style="font-size:0.72rem;color:var(--muted)">hello@studiokit.uk</div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('visible');
+      e.target.querySelectorAll('.feature-card, .pricing-card, .diff-item').forEach((child, i) => {
+        child.style.opacity = '0';
+        child.style.transform = 'translateY(16px)';
+        child.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        setTimeout(() => {
+          child.style.opacity = '1';
+          child.style.transform = 'translateY(0)';
+        }, i * 60);
+      });
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
